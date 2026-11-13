@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shopping Bag & Checkout — LUMEN Luxury Audio & Living</title>
+  <meta name="description" content="Review your selected LUMEN pieces, apply promo discounts, and complete seamless, encrypted checkout.">
+  <meta name="theme-color" content="#0B0C10">
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="announcement-bar">
+    <div class="container" style="display: flex; align-items: center; justify-content: center; gap: var(--space-2);">
+      <span>Complimentary carbon-neutral express shipping on orders over $150.</span>
+      <span>Use code <strong class="announcement-code">LUMEN20</strong> for 20% off.</span>
+    </div>
+  </div>
+
+  <!-- Main Navigation Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand-logo" aria-label="LUMEN Home">
+        <span class="brand-symbol">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        </span>
+        LUMEN
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <nav class="nav-menu" aria-label="Primary Navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="shop.html" class="nav-link">Catalogue</a>
+        <a href="shop.html?category=audio" class="nav-link">Acoustics</a>
+        <a href="shop.html?category=wearables" class="nav-link">Wearables</a>
+        <a href="about.html" class="nav-link">About & Contact</a>
+      </nav>
+
+      <!-- Header Action Controls -->
+      <div class="header-actions">
+        <button class="action-btn header-search-trigger" title="Search products" aria-label="Search">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+        </button>
+
+        <a href="shop.html?filter=wishlist" class="action-btn" title="Saved Wishlist" aria-label="Wishlist">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+          <span class="action-badge wishlist-count-badge" style="display: none;">0</span>
+        </a>
+
+        <a href="cart.html" class="action-btn header-cart-trigger" title="View Shopping Bag" aria-label="Shopping Bag">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+          <span class="action-badge cart-count-badge" style="display: none;">0</span>
+        </a>
+
+        <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Cart Header Banner -->
+  <section style="padding: var(--space-8) 0; border-bottom: 1px solid var(--border-subtle); background: radial-gradient(circle at 50% 0%, rgba(99, 102, 241, 0.1) 0%, transparent 70%);">
+    <div class="container">
+      <nav class="breadcrumbs" aria-label="Breadcrumb">
+        <a href="index.html">Home</a>
+        <span>/</span>
+        <span style="color: var(--text-primary);">Shopping Bag & Checkout</span>
+      </nav>
+      <h1 class="section-title" style="margin-bottom: var(--space-2);">Your Selected Pieces</h1>
+      <p class="section-desc">Review your items, apply promotional codes, and experience frictionless checkout.</p>
+    </div>
+  </section>
+
+  <!-- Main Content Area -->
+  <main class="container">
+    
+    <!-- Empty Cart View -->
+    <div id="cart-empty-view" class="drawer-empty" style="display: none; padding: var(--space-20) 0;">
+      <div class="drawer-empty-icon" style="width: 80px; height: 80px; margin: 0 auto var(--space-4);">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>
+      </div>
+      <h2 class="drawer-empty-title" style="font-size: var(--text-2xl);">Your shopping bag is currently empty</h2>
+      <p class="drawer-empty-desc" style="max-width: 460px; margin: 0 auto var(--space-8);">
+        Discover our flagship Horizon headphones, precision titanium chronographs, and architectural desk luminaires.
+      </p>
+      <a href="shop.html" class="btn btn-primary btn-lg">Explore All Collections</a>
+    </div>
+
+    <!-- Populated Cart & Checkout View -->
+    <div id="cart-full-view" class="cart-checkout-layout" style="display: none;">
+      
+      <!-- Left Column: Table & Simulated Checkout Accordion -->
+      <div style="display: flex; flex-direction: column; gap: var(--space-8);">
+        
+        <!-- Free Shipping Progress Meter -->
+        <div style="background: var(--bg-surface); border: 1px solid var(--border-subtle); border-radius: var(--radius-xl); padding: var(--space-5);">
+          <div id="cart-freeship-text" style="font-size: var(--text-sm); margin-bottom: var(--space-3); color: var(--text-secondary);">
+            Add items to unlock Free Global Express Shipping.
+          </div>
+          <div class="progress-bar-bg" style="height: 8px;">
+            <div id="cart-freeship-progress" class="progress-bar-fill" style="width: 0%;"></div>
+          </div>
+        </div>
+
+        <!-- Cart Table Wrap -->
+        <div class="cart-table-wrap">
+          <table class="cart-table">
+            <thead>
+              <tr>
+                <th>Product</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Subtotal</th>
+                <th style="text-align: right;">Action</th>
+              </tr>
+            </thead>
+            <tbody id="cart-table-body">
+              <!-- Rendered via cart-checkout.js -->
+            </tbody>
+          </table>
+
+          <div style="padding: var(--space-4) var(--space-6); background: var(--bg-surface-elevated); display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border-subtle); flex-wrap: wrap; gap: var(--space-3);">
+            <a href="shop.html" class="btn btn-outline btn-sm">← Continue Shopping</a>
+            <button id="clear-cart-btn" class="btn btn-ghost btn-sm" style="color: var(--rose-accent);">Clear Entire Bag</button>
+          </div>
+        </div>
+
+        <!-- Checkout Form Flow Section -->
+        <div id="checkout-flow-section" style="padding-top: var(--space-4);">
+          <div style="margin-bottom: var(--space-6);">
+            <div class="section-tag">Express Checkout</div>
+            <h2 style="font-family: var(--font-display); font-size: var(--text-2xl); font-weight: 800;">Shipping & Payment Details</h2>
+            <p style="font-size: var(--text-sm); color: var(--text-secondary);">Complete your dispatch coordinates below. (Simulated demo checkout).</p>
+          </div>
+
+          <form id="checkout-master-form">
+            <div class="checkout-accordion">
+              
+              <!-- Step 1: Customer Contact -->
+              <div class="checkout-step-card">
+                <div class="checkout-step-title">
+                  <span class="step-num">1</span>
+                  <span>Contact Information</span>
+                </div>
+                <div class="form-grid-2">
+                  <div class="form-group">
+                    <label class="form-label" for="checkout-fname">First Name *</label>
+                    <input type="text" id="checkout-fname" class="form-control" placeholder="e.g. Alex" value="Alex" required>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label" for="checkout-lname">Last Name *</label>
+                    <input type="text" id="checkout-lname" class="form-control" placeholder="e.g. Sterling" value="Sterling" required>
+                  </div>
+                </div>
+                <div class="form-grid-2">
+                  <div class="form-group">
+                    <label class="form-label" for="checkout-email">Email Address *</label>
+                    <input type="email" id="checkout-email" class="form-control" placeholder="alex.sterling@example.com" value="alex.sterling@studio.com" required>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label" for="checkout-phone">Telephone (SMS Delivery Tracking)</label>
+                    <input type="tel" id="checkout-phone" class="form-control" placeholder="+1 (555) 019-2834" value="+1 (555) 019-2834">
+                  </div>
+                </div>
+              </div>
+
+              <!-- Step 2: Shipping Destination -->
+              <div class="checkout-step-card">
+                <div class="checkout-step-title">
+                  <span class="step-num">2</span>
+                  <span>Delivery Address</span>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="checkout-address">Street Address *</label>
+                  <input type="text" id="checkout-address" class="form-control" placeholder="e.g. 742 Evergreen Terrace" value="840 North Michigan Avenue" required>
+                </div>
+                <div class="form-grid-2">
+                  <div class="form-group">
+                    <label class="form-label" for="checkout-city">City *</label>
+                    <input type="text" id="checkout-city" class="form-control" placeholder="Chicago" value="Chicago" required>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label" for="checkout-zip">Postal / Zip Code *</label>
+                    <input type="text" id="checkout-zip" class="form-control" placeholder="60611" value="60611" required>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="checkout-country">Country / Region</label>
+                  <select id="checkout-country" class="form-control" style="cursor: pointer;">
+                    <option value="US">United States</option>
+                    <option value="UK">United Kingdom</option>
+                    <option value="DE">Germany</option>
+                    <option value="JP">Japan</option>
+                    <option value="CA">Canada</option>
+                    <option value="AU">Australia</option>
+                  </select>
+                </div>
+              </div>
+
+              <!-- Step 3: Shipping Method Selection -->
+              <div class="checkout-step-card">
+                <div class="checkout-step-title">
+                  <span class="step-num">3</span>
+                  <span>Shipping Tier</span>
+                </div>
+                <div style="display: flex; flex-direction: column; gap: var(--space-3);">
+                  <label class="filter-checkbox-label" style="background: var(--bg-surface-elevated); padding: var(--space-3) var(--space-4); border-radius: var(--radius-md); border: 1px solid var(--border-subtle); justify-content: space-between;">
+                    <div style="display: flex; align-items: center; gap: var(--space-3);">
+                      <input type="radio" name="shipping-tier" value="standard" checked style="accent-color: var(--accent-primary);">
+                      <div>
+                        <div style="font-weight: 600; font-size: var(--text-sm); color: var(--text-primary);">Standard Courier (3-5 Days)</div>
+                        <div style="font-size: var(--text-xs); color: var(--text-muted);">Free on orders over $150</div>
+                      </div>
+                    </div>
+                    <span style="font-weight: 700; font-family: var(--font-display);">Included</span>
+                  </label>
+
+                  <label class="filter-checkbox-label" style="background: var(--bg-surface-elevated); padding: var(--space-3) var(--space-4); border-radius: var(--radius-md); border: 1px solid var(--border-subtle); justify-content: space-between;">
+                    <div style="display: flex; align-items: center; gap: var(--space-3);">
+                      <input type="radio" name="shipping-tier" value="express" style="accent-color: var(--accent-primary);">
+                      <div>
+                        <div style="font-weight: 600; font-size: var(--text-sm); color: var(--text-primary);">Priority Air Express (1-2 Days)</div>
+                        <div style="font-size: var(--text-xs); color: var(--text-muted);">Guaranteed priority dispatch & insurance</div>
+                      </div>
+                    </div>
+                    <span style="font-weight: 700; font-family: var(--font-display);">$15.00</span>
+                  </label>
+
+                  <label class="filter-checkbox-label" style="background: var(--bg-surface-elevated); padding: var(--space-3) var(--space-4); border-radius: var(--radius-md); border: 1px solid var(--border-subtle); justify-content: space-between;">
+                    <div style="display: flex; align-items: center; gap: var(--space-3);">
+                      <input type="radio" name="shipping-tier" value="overnight" style="accent-color: var(--accent-primary);">
+                      <div>
+                        <div style="font-weight: 600; font-size: var(--text-sm); color: var(--text-primary);">VIP Next-Morning Courier (Next Day by 10 AM)</div>
+                        <div style="font-size: var(--text-xs); color: var(--text-muted);">Direct white-glove courier handover</div>
+                      </div>
+                    </div>
+                    <span style="font-weight: 700; font-family: var(--font-display);">$25.00</span>
+                  </label>
+                </div>
+              </div>
+
+              <!-- Step 4: Payment Simulation -->
+              <div class="checkout-step-card">
+                <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: var(--space-5);">
+                  <div class="checkout-step-title" style="margin-bottom: 0;">
+                    <span class="step-num">4</span>
+                    <span>Encrypted Payment</span>
+                  </div>
+                  <button type="button" id="test-card-fill-btn" class="btn btn-outline btn-sm" style="font-size: 0.72rem; color: var(--cyan-accent); border-color: rgba(6, 182, 212, 0.4);">
+                    Auto-Fill Demo Card
+                  </button>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="checkout-card-name">Name on Card *</label>
+                  <input type="text" id="checkout-card-name" class="form-control" placeholder="Alex Sterling" value="Alex Sterling" required>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="checkout-card-num">Card Number *</label>
+                  <input type="text" id="checkout-card-num" class="form-control" placeholder="4242 4242 4242 4242" maxlength="19" required>
+                </div>
+
+                <div class="form-grid-2">
+                  <div class="form-group">
+                    <label class="form-label" for="checkout-card-exp">Expiry (MM/YY) *</label>
+                    <input type="text" id="checkout-card-exp" class="form-control" placeholder="12/28" maxlength="5" required>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label" for="checkout-card-cvv">Security Code (CVV) *</label>
+                    <input type="password" id="checkout-card-cvv" class="form-control" placeholder="888" maxlength="4" required>
+                  </div>
+                </div>
+
+                <div style="font-size: var(--text-xs); color: var(--text-muted); display: flex; align-items: center; gap: var(--space-2); margin-top: var(--space-2);">
+                  <span style="color: var(--emerald-accent);">🔒</span>
+                  <span>Simulated safe transaction. No real funds will be charged.</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Place Order Submit Button -->
+            <div style="margin-top: var(--space-6);">
+              <button type="submit" id="place-order-submit-btn" class="btn btn-accent btn-lg" style="width: 100%; font-size: 1.05rem;">
+                Authorize & Place Order
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <!-- Right Column: Sticky Order Summary & Coupon -->
+      <div>
+        <div class="cart-summary-card">
+          <h3 class="summary-title">Summary Breakdown</h3>
+          
+          <div class="summary-line-item">
+            <span>Item Subtotal</span>
+            <span id="summary-subtotal" style="font-family: var(--font-display); font-weight: 600; color: var(--text-primary);">$0.00</span>
+          </div>
+
+          <div class="summary-line-item">
+            <span>Shipping</span>
+            <span id="summary-shipping" style="font-family: var(--font-display); font-weight: 600;">FREE</span>
+          </div>
+
+          <div class="summary-line-item" id="summary-discount-row" style="display: none; color: var(--emerald-accent);">
+            <span>Promotional Savings</span>
+            <span id="summary-discount-val" style="font-family: var(--font-display); font-weight: 700;">-$0.00</span>
+          </div>
+
+          <div class="summary-line-item">
+            <span>Estimated Sales Tax (8.25%)</span>
+            <span id="summary-tax" style="font-family: var(--font-display); font-weight: 600; color: var(--text-primary);">$0.00</span>
+          </div>
+
+          <!-- Applied Coupon Tag -->
+          <div id="applied-coupon-pill" class="section-tag" style="display: none; background: rgba(16, 185, 129, 0.12); color: var(--emerald-accent); border-color: rgba(16, 185, 129, 0.3); margin-top: var(--space-2);"></div>
+
+          <div class="summary-total-item">
+            <span>Grand Total</span>
+            <span id="summary-grand-total" style="color: var(--accent-primary);">$0.00</span>
+          </div>
+
+          <!-- Promo Code Box -->
+          <form id="coupon-apply-form" class="coupon-input-group">
+            <input type="text" id="coupon-input-code" class="coupon-input" placeholder="Promo code (e.g. LUMEN20)">
+            <button type="submit" class="btn btn-outline btn-sm">Apply</button>
+          </form>
+
+          <!-- Test Promo Helper Pills -->
+          <div style="font-size: var(--text-xs); color: var(--text-muted); margin-bottom: var(--space-4);">
+            Try demo promo codes:
+            <button type="button" onclick="document.getElementById('coupon-input-code').value='LUMEN20'; store.applyCoupon('LUMEN20');" style="color: var(--accent-primary); text-decoration: underline; margin-right: var(--space-2);">LUMEN20</button>
+            <button type="button" onclick="document.getElementById('coupon-input-code').value='WELCOME10'; store.applyCoupon('WELCOME10');" style="color: var(--accent-primary); text-decoration: underline;">WELCOME10</button>
+          </div>
+
+          <div style="padding-top: var(--space-4); border-top: 1px solid var(--border-subtle); display: flex; flex-direction: column; gap: var(--space-2); font-size: var(--text-xs); color: var(--text-muted);">
+            <div style="display: flex; align-items: center; gap: var(--space-2);">
+              <span>🛡️</span>
+              <span>256-Bit SSL military-grade encryption</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: var(--space-2);">
+              <span>⚡</span>
+              <span>Dispatched within 24 hours with live GPS courier tracking</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Order Confirmation Modal -->
+  <div id="order-confirmation-modal" class="modal-backdrop">
+    <!-- Injected dynamically via cart-checkout.js on success -->
+  </div>
+
+  <!-- Global Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand-col">
+          <a href="index.html" class="brand-logo">
+            <span class="brand-symbol">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+            </span>
+            LUMEN
+          </a>
+          <p>Contemporary high-fidelity acoustic instruments, smart chronographs, and workspace ergonomics built with zero compromise.</p>
+          <div class="footer-socials">
+            <a href="#" class="social-link" aria-label="Twitter">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+            <a href="#" class="social-link" aria-label="Instagram">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+            </a>
+            <a href="#" class="social-link" aria-label="LinkedIn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Catalogue</h4>
+          <ul class="footer-links">
+            <li><a href="shop.html?category=audio" class="footer-link">Acoustics & Audio</a></li>
+            <li><a href="shop.html?category=wearables" class="footer-link">Wearable Tech</a></li>
+            <li><a href="shop.html?category=workspace" class="footer-link">Living & Workspace</a></li>
+            <li><a href="shop.html?category=travel" class="footer-link">Travel & Carry</a></li>
+            <li><a href="shop.html" class="footer-link">All Products</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Concierge</h4>
+          <ul class="footer-links">
+            <li><a href="about.html#faq" class="footer-link">Order Tracking</a></li>
+            <li><a href="about.html#faq" class="footer-link">30-Day In-Home Trial</a></li>
+            <li><a href="about.html#faq" class="footer-link">Warranty & Repairs</a></li>
+            <li><a href="about.html#contact" class="footer-link">Contact Studio Support</a></li>
+            <li><a href="cart.html" class="footer-link">Review Shopping Bag</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Studio</h4>
+          <ul class="footer-links">
+            <li><a href="about.html" class="footer-link">About LUMEN</a></li>
+            <li><a href="about.html" class="footer-link">Materials Philosophy</a></li>
+            <li><a href="about.html" class="footer-link">Carbon Neutrality</a></li>
+            <li><a href="about.html" class="footer-link">Studio Press</a></li>
+          </ul>
+        </div>
+
+        <div class="newsletter-box">
+          <h4 class="footer-col-title">LUMEN Journal</h4>
+          <p>Subscribe to receive private invitations to limited hardware drops and acoustic releases.</p>
+          <form class="newsletter-form">
+            <input type="email" class="newsletter-input" placeholder="Your email address..." required>
+            <button type="submit" class="btn btn-accent btn-sm">Join</button>
+          </form>
+          <span class="newsletter-legal">By subscribing, you agree to our Privacy Policy. Unsubscribe anytime.</span>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>© 2026 LUMEN Technologies Inc. All rights reserved. Designed with pure HTML5, CSS3 & Vanilla JavaScript.</div>
+        <div class="payment-badges">
+          <span class="payment-badge">VISA</span>
+          <span class="payment-badge">MASTERCARD</span>
+          <span class="payment-badge">AMEX</span>
+          <span class="payment-badge">APPLE PAY</span>
+          <span class="payment-badge">256-BIT SSL</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script type="module" src="js/main.js"></script>
+  <script type="module" src="js/cart-checkout.js"></script>
+</body>
+</html>
